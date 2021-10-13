@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""reads stdin line by line and computes metrics"""
-
+"""
+reads stdin line by line and computes metrics
+"""
 import sys
 
 file_size = 0
@@ -27,13 +28,14 @@ try:
             for key, value in sorted(status_tally.items()):
                 if value:
                     print("{:s}: {:d}".format(key, value))
-    print("File size: {:d}".format(file_size))
-    for key, value in sorted(status_tally.items()):
-        if value:
-            print("{:s}: {:d}".format(key, value))
-
+        print("File size: {:d}".format(file_size))
+        for key, value in sorted(status_tally.items()):
+            if value:
+                print("{:s}: {:d}".format(key, value))
+                                    
 except KeyboardInterrupt:
     print("File size: {:d}".format(file_size))
     for key, value in sorted(status_tally.items()):
         if value:
             print("{:s}: {:d}".format(key, value))
+                            
